@@ -756,6 +756,212 @@ footer {
   font-size: 15px;
 }
 
+.promo-panel .panel-detail {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 40px;
+  width: auto;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  color: #fff;
+  font-size: inherit;
+  writing-mode: horizontal-tb;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-42%);
+  transition: opacity .25s ease .16s, transform .25s ease .16s;
+}
+
+.promo-panel.is-active .panel-detail {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%);
+}
+
+.panel-detail strong {
+  font-size: clamp(25px, 2.3vw, 38px);
+  font-weight: 800;
+}
+
+.panel-detail em {
+  font-size: clamp(16px, 1.3vw, 21px);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.detail-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 140px;
+  height: 47px;
+  flex: 0 0 47px;
+  gap: 12px;
+  padding: 0;
+  border-radius: 999px;
+  background: #2f66bd;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.promo-panel .panel-detail .detail-button {
+  position: static;
+  z-index: auto;
+  top: auto;
+  left: auto;
+  width: 140px;
+  margin: 0;
+  display: inline-flex;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  opacity: 1;
+  pointer-events: auto;
+  writing-mode: horizontal-tb;
+  transform: none;
+}
+
+.promo-copy.is-active b {
+  opacity: 0;
+}
+
+.detail-button i {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: .8;
+}
+
+.tile.is-active::before {
+  content: none;
+}
+
+
+.promo {
+  width: min(1500px, calc(100% - 96px));
+  min-height: 580px;
+  display: flex;
+  gap: 10px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.promo-panel {
+  position: relative;
+  min-width: 0;
+  min-height: 580px;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 16px;
+  color: #fff;
+  text-decoration: none;
+  transition: flex .5s ease;
+}
+
+.promo-panel.is-active {
+  flex: 4.6;
+}
+
+.promo-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .42);
+  transition:.3s ease;
+}
+
+.promo-panel.is-active::after {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, .66),
+    rgba(0, 0, 0, .16)
+  );
+}
+
+.promo-copy {
+  position: relative;
+  overflow: hidden;
+  background: #60aaf7; /* 대표 카드 이미지가 있으면 background-image로 교체 */
+}
+
+.promo-label,
+.tile > span:first-child {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: max-content;
+  margin: 0;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  writing-mode: vertical-rl;
+  transform: translate(-50%, -50%);
+}
+
+.promo-panel.is-active .promo-label,
+.tile.is-active > span:first-child {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 전체화면 .promo 첫 카드 글씨 */
+.promo-copy.is-active > b {
+  position: absolute;
+  z-index: 2;
+  top: 92px;
+  left: 40px;
+  margin: 0;
+  font-size: clamp(22px, 2vw, 32px);
+  font-weight: 800;
+  line-height: 1.4;
+  opacity: 1;
+  transform: none;
+}
+
+/* .promo-copy .panel-detail {
+  top: 50%;
+  left: 40px;
+  gap: 18px;
+  transform: translateY(-18%);
+}
+
+.promo-copy .panel-detail strong {
+  font-size: 0;
+}
+
+.promo-copy .panel-detail strong::after {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.promo-copy .panel-detail em {
+  display: none;
+}
+
+/* 자세히보기 버튼 */
+.promo-copy .detail-button {
+  width: 178px;
+  height: 52px;
+  gap: 14px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.promo-copy .detail-button i {
+  font-size: 22px;
+}
+
 @media (max-width: 1280px) {
   .nav {
     display: none;
@@ -929,7 +1135,6 @@ footer {
   /* .actions { grid-template-columns: 2fr;} */
   
 
-  @media (max-width: 768px) {
   .actions .action {
     position: relative;
     box-sizing: border-box;
@@ -968,10 +1173,105 @@ footer {
   .actions .action small{
     font-size: 14px;
   }
+
+  /* Mobile BMS accordion: one expanded card followed by compact horizontal tabs. */
+  /* 768px 이하 .promo */
+.promo {
+  width: calc(100% - 32px);
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.promo-panel {
+  position: relative;
+  flex: 0 0 54px;
+  min-height: 54px;
+  overflow: hidden;
+  border-radius: 14px;
+  transition: flex-basis .35s ease;
+}
+
+.promo-panel.is-active {
+  flex-basis: 324px;
+}
+
+.promo-copy {
+  padding: 0;
+  background-position: center;
+  background-size: cover;
+}
+
+/* 펼쳐진 첫 카드 제목 */
+.promo-copy.is-active > b {
+  position: absolute;
+  z-index: 2;
+  top: 24px;
+  left: 24px;
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.4;
+  opacity: 1;
+  transform: none;
+}
+
+/* 접힌 카드 제목: 가로 표시 */
+.promo-label,
+.tile > span:first-child {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 24px;
+  margin: 0;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  writing-mode: horizontal-tb;
+  transform: translateY(-50%);
+}
+
+/* 펼쳐진 카드의 세로 제목만 숨김 */
+.promo-copy.is-active .promo-label,
+.tile.is-active > span:first-child {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 제목·설명·자세히보기 영역 */
+.promo-panel .panel-detail {
+  top: 24px;
+  left: 24px;
+  gap: 12px;
+  transform: none;
+}
+
+.promo-panel.is-active .panel-detail {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+.panel-detail strong {
+  font-size: 20px;
+}
+
+/* .panel-detail em {
+  font-size: 16px;
+  line-height: 1.6;
+} */
+
+.panel-detail .detail-button {
+  width: 178px;
+  height: 52px;
+  margin-top: 8px;
+  font-size: 17px;
 }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 540px) {
 
 .brand {
   display: flex;
@@ -1241,6 +1541,5 @@ header{
   font-size: 12px;
   margin-bottom: 0;
 }
-
-
 }
+
