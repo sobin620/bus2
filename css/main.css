@@ -68,7 +68,20 @@
   --muted: #858585;
 }
 
-* { box-sizing: border-box; }
+* {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
 body {
   margin: 0;
@@ -109,8 +122,98 @@ body {
 
 header {
   height: 117px;
-  background: #fff;
   margin-bottom: 60px;
+}
+
+header .header_i {
+      max-width: 1400px;
+      height: 100%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+
+    header .header_i nav {
+      height: 50px;
+    }
+
+    header .header_i nav .menu {
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+    }
+
+    header .header_i nav .menu li > a {
+      display: block;
+      width: 120px;
+      height: 50px;
+      text-align: center;
+      align-content: center;
+    }
+
+    /* header .header_i nav .menu .submenu {
+      display: none;
+    } */
+    
+ header .header_i nav .menu .submenu li a {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 14px 20px;
+
+  text-align: left;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #111;
+}
+
+
+    /* 메뉴 한 칸의 기준점 */
+header .header_i nav .menu > li {
+  position: relative;
+}
+
+/* 기존 display: none; 은 제거 */
+header .header_i nav .menu .submenu {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: 100;
+
+  width: max-content;
+min-width: 180px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+
+  transition:
+    max-height 0.35s ease,
+    opacity 0.2s ease,
+    transform 0.35s ease;
+}
+
+/* 클릭한 li에 active가 붙었을 때 */
+header .header_i nav .menu > li.active .submenu {
+  max-height: 700px; /* 서브메뉴 항목 수보다 충분히 크게 */
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+
+header .header_i nav .menu .submenu li a:hover {
+  background: #f2f5ff;
 }
 
 .brand {
@@ -963,10 +1066,8 @@ footer {
 }
 
 @media (max-width: 1280px) {
-  .nav {
-    display: none;
-  }
-  .navnav {
+
+  header .header_i nav {
     display: none;
   }
 
