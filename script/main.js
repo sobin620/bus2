@@ -59,3 +59,18 @@ document.addEventListener("click", (event) => {
     });
   }
 });
+
+const heroSwiper = new Swiper(".hero-swiper", {
+  loop: true,
+  speed: 700,
+
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+
+  pagination: {
+    el: ".hero .swiper-pagination",
+    clickable: true,
+  },
+});

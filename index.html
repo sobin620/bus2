@@ -6,9 +6,13 @@
   <title>대구광역시 버스정보시스템</title>
 </head>
 <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css"
+/>
 <link rel="stylesheet" href="css/main.css">
 <script src="script/main.js" defer></script>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
 
 <body>
   <!-- 공지사항 -->
@@ -110,7 +114,7 @@
   <!-- 길찾기 -->
 
   <!-- 메인베너 -->
-  <section class="hero">
+  <!-- <section class="hero">
     <div class="wrap">
       <div>
         <h1>대구광역시 버스 노선 개편 안내</h1>
@@ -118,8 +122,44 @@
       </div>
     </div>
     <span class="pager">01/06</span>
-  </section>
+  </section> -->
   <!-- 메인베너 -->
+   <section class="hero">
+  <div class="swiper hero-swiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide hero-slide hero-slide--1">
+        <div class="wrap">
+          <div class="hero-text">
+            <h1>대구광역시 버스 노선 개편 안내</h1>
+            <button class="more">자세히 알아보기</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide hero-slide hero-slide--2">
+        <div class="wrap">
+          <div class="hero-text">
+            <h1>대구 버스 이용 안내</h1>
+            <button class="more">자세히 알아보기</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide hero-slide hero-slide--3">
+        <div class="wrap">
+          <div class="hero-text">
+            <h1>실시간 버스 운행 정보</h1>
+            <button class="more">자세히 알아보기</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
 
   <!-- 빠른메뉴 -->
   <div class="wrap quick">
