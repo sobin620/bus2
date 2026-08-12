@@ -492,14 +492,15 @@ header .brand{
 .hero-slide--1 {
   background-image:
     linear-gradient(90deg, rgba(25, 35, 50, 0.65), rgba(25, 35, 50, 0.1)),
-    url("../image/mainbus.jpg");
+    url("../image/money.jfif");
 }
 
 .hero-slide--2 {
   background-image:
     linear-gradient(90deg, rgba(25, 35, 50, 0.65), rgba(25, 35, 50, 0.1)),
-    url("../image/bus-banner.jpg");
+    url("../image/mainbus.jpg");
 }
+
 
 .hero-slide--3 {
   background-image:
@@ -655,17 +656,22 @@ header .brand{
   font-weight: 600;
 }
 
+.tile:nth-child(1) {
+  background-image: url('../image/bus1.jpg');
+
+}
+
 .tile:nth-child(2) {
-  background-image: url('/image/bus2.jpg');
+  background-image: url('../image/bus2.jpg');
 
 }
 
 .tile:nth-child(3) {
-  background-image: url(/image/bus1.avif);
+  background-image: url(../image/bus1.avif);
 }
 
 .tile:nth-child(4) {
-  background-image: url('/image/bus3.png');
+  background-image: url('../image/bus3.png');
 }
 
 .travel {
