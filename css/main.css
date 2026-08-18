@@ -595,6 +595,9 @@ header .brand{
   margin: 0 auto 13px;
   border-radius: 50%;
   background: #ddd;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70px;
 }
 
 .promo {
@@ -606,6 +609,27 @@ header .brand{
   margin: 0 auto; 
   overflow: hidden;
   /* background: #60aaf7; */
+}
+
+
+.wrap.quick a i.icon-fare {
+  background-image: url('../image/L1.png');
+}
+
+.wrap.quick a i.icon-use {
+  background-image: url('../image/L2.png');
+}
+
+.wrap.quick a i.icon-route {
+  background-image: url('../image/L3.png');
+}
+
+.wrap.quick a i.icon-stop {
+  background-image: url('../image/L4.png');
+}
+
+.wrap.quick a i.icon-lost {
+  background-image: url('./images/icon_lost.png');
 }
 
 .promo-copy {
@@ -1222,11 +1246,14 @@ footer {
 
 .quick i {
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   margin: 0 auto 13px;
   border-radius: 50%;
   background: #ddd;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70px;
 }
 
 
@@ -1270,14 +1297,22 @@ footer {
   }
 
   .quick a {
-    font-size: 14px;
+    font-size: 13px;
     margin: auto;
    }
 
-  .quick i{
-    width: 65px;
-    height: 65px;
-  }
+
+  .quick i {
+  display: block;
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 13px;
+  border-radius: 50%;
+  background: #ddd;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px;
+}
 
   .promo { 
     grid-template-columns: 1fr ;
