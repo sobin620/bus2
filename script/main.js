@@ -12,65 +12,33 @@ promoPanels.forEach((panel) => {
   });
 });
 
-const menuItems = document.querySelectorAll("header .menu > li");
+$(function(){
+      $(".gnb").on('mouseenter', function(){
+         $(".mega").stop().slideDown(300);
+      });
 
-menuItems.forEach((item) => {
-  const mainLink = item.querySelector(":scope > a");
-  const submenu = item.querySelector(":scope > .submenu");
+      $("header").on('mouseleave', function(){
 
-  // 서브메뉴가 없는 메뉴는 원래 링크 기능 유지
-  if (!submenu) return;
+         $(".mega").stop().slideUp(300);
+      });
 
-  mainLink.setAttribute("aria-expanded", "false");
+      $(".gnb li").on('mouseenter', function(){
+    let idx = $(this).index();
 
-  mainLink.addEventListener("click", (event) => {
-    event.preventDefault();
+    $(this).addClass("on").siblings().removeClass("on");
+    $(".mega_group").removeClass("on").eq(idx).addClass("on");
+}); 
 
-    const isOpen = item.classList.contains("active");
+      $(".cate li").on('mouseenter', function(){
 
-    // 다른 서브메뉴 닫기
-    menuItems.forEach((otherItem) => {
-      otherItem.classList.remove("active");
+         let idx = $(this).index();
 
-      const otherLink = otherItem.querySelector(":scope > a");
-      if (otherLink) {
-        otherLink.setAttribute("aria-expanded", "false");
-      }
-    });
 
-    // 현재 클릭한 메뉴 열기
-    if (!isOpen) {
-      item.classList.add("active");
-      mainLink.setAttribute("aria-expanded", "true");
-    }
-  });
-});
+         $(this).addClass("on").siblings().removeClass("on");
 
-// 메뉴 영역 밖을 클릭하면 닫기
-document.addEventListener("click", (event) => {
-  if (!event.target.closest("header .menu")) {
-    menuItems.forEach((item) => {
-      item.classList.remove("active");
+         let $mega = $(this).closest(".mega");
+         $mega.find(".panel").removeClass("on");
+         $mega.find(".panel").eq(idx).addClass("on");
+      }); 
 
-      const mainLink = item.querySelector(":scope > a");
-      if (mainLink) {
-        mainLink.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
-});
-
-const heroSwiper = new Swiper(".hero-swiper", {
-  loop: true,
-  speed: 700,
-
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
-
-  pagination: {
-    el: ".hero .swiper-pagination",
-    clickable: true,
-  },
-});
+   }); 

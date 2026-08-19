@@ -121,99 +121,86 @@ body {
 }
 
 header {
+  position: relative; 
   height: 117px;
-  margin-bottom: 60px;
+  border-bottom: 1px solid #eee; 
+  margin-bottom: 70px;
 }
 
 header .header_i {
-      max-width: 1400px;
-      height: 100%;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      gap: 50px;
-    }
+  max-width: 1400px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 로고와 메뉴 양끝 정렬 */
+}
 
-    header .header_i nav {
-      height: 50px;
-    }
+header .gnb ul {
+  display: flex;
+}
 
-    header .header_i nav .menu {
-      font-size: 16px;
-      font-weight: 600;
-      display: flex;
-    }
-
-    header .header_i nav .menu li > a {
-      display: block;
-      width: 120px;
-      height: 50px;
-      text-align: center;
-      align-content: center;
-    }
-
-    /* header .header_i nav .menu .submenu {
-      display: none;
-    } */
-    
- header .header_i nav .menu .submenu li a {
+header .gnb ul li a {
   display: block;
-  width: 100%;
-  height: auto;
-  box-sizing: border-box;
-  padding: 14px 20px;
-
-  text-align: left;
-  white-space: nowrap;
-  text-decoration: none;
-  color: #111;
+  padding: 0 35px;
+  font-weight: 700;
+  font-size: 18px;
 }
 
-
-    /* 메뉴 한 칸의 기준점 */
-header .header_i nav .menu > li {
-  position: relative;
+header .gnb ul li.on a {
+  color: #258fff;
 }
 
-/* 기존 display: none; 은 제거 */
-header .header_i nav .menu .submenu {
+/* ⬇️ 메가메뉴 수정 부분 ⬇️ */
+.mega {
+  display: none;
   position: absolute;
-  top: 50px;
+  top: 117px; /* header 높이(117px) 바로 밑으로 위치 */
   left: 0;
-  z-index: 100;
-
-  width: max-content;
-min-width: 180px;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-
-  max-height: 0;
-  opacity: 0;
-  transform: translateY(-10px);
-  pointer-events: none;
-
-  background: #fff;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-
-  transition:
-    max-height 0.35s ease,
-    opacity 0.2s ease,
-    transform 0.35s ease;
+  width: 100%;
+  background-color: #fff;
+  z-index: 999; /* 메인 콘텐츠보다 위에 뜨도록 설정 */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05); /* 약간의 그림자 효과 */
 }
 
-/* 클릭한 li에 active가 붙었을 때 */
-header .header_i nav .menu > li.active .submenu {
-  max-height: 700px; /* 서브메뉴 항목 수보다 충분히 크게 */
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+.mega .mega_i {
+  max-width: 1400px; /* header_i와 동일한 너비로 맞춰 위치 동일화 */
+  margin: auto;
+  padding-left: 300px; /* 로고 넓이만큼 왼쪽 여백을 주어 GNB 메뉴 위치와 세로 정렬 맞춤 */
 }
 
+.mega .mega_i .mega_group {
+  display: none;
+}
 
+.mega .mega_i .mega_group.on {
+  display: flex;
+}
 
-header .header_i nav .menu .submenu li a:hover {
-  background: #f2f5ff;
+.mega .mega_i .mega_group .panels {
+  flex-grow: 1;
+  padding: 30px 0 50px 0; /* 패딩 간격 조정 */
+}
+
+.mega .mega_i .mega_group .panels .panel {
+  display: none;
+}
+
+.mega .mega_i .mega_group .panels .panel.on {
+  display: flex;
+  gap: 100px; /* 메뉴 컬럼 사이 간격 */
+}
+
+.mega .mega_i .mega_group .panel li a {
+  display: block;
+  padding: 10px 0;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.mega .mega_i .mega_group .panel li a:hover {
+  color: #258fff; /* 마우스 호버 시 파란색 */
 }
 
 .brand {
@@ -594,10 +581,10 @@ header .brand{
   height: 90px;
   margin: 0 auto 13px;
   border-radius: 50%;
-  background: #ddd;
+  background-color: #F5F5F5;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 70px;
+  background-size: 60px;
 }
 
 .promo {

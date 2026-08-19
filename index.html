@@ -4,15 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>대구광역시 버스정보시스템</title>
-</head>
+
 <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css"
 />
 <link rel="stylesheet" href="css/main.css">
-<script src="script/main.js" defer></script>
+<script src="script/jquery-ui.min.js" defer></script>
+<script src="script/jquery-4.0.0.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+<script src="script/main.js" defer></script>
+</head>
+
 
 <body>
   <!-- 공지사항 -->
@@ -33,78 +37,119 @@
       </div>
 
       <div class="header_i">
-      <nav>
-        <ul class="menu">
-          <li>
-            <a href="#">버스이용안내</a>
-            <ul class="submenu">
-              <li><a href="#">버스 요금 안내</a></li>
-              <li><a href="#">버스 운행 시간표</a></li>
-              <li><a href="#">저상버스 운행 시간표</a></li>
-              <li><a href="#">캐리어버스 운행 시간표</a></li>
-              <li><a href="#">버스 회사 정보 조회</a></li>
-              <li><a href="#">버스정보안내기 위치</a></li>
-              <li><a href="#">정류소 번호 조회</a></li>
-              <li><a href="#">버스 이용 통계</a></li>
-              <li><a href="#">정류소별 이용 통계</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">분실물센터</a>
-            <!-- <ul class="submenu">
-              <li><a href="#">서브메뉴2-1</a></li>
-              <li><a href="#">서브메뉴2-2</a></li>
-              <li><a href="#">서브메뉴2-3</a></li>
-            </ul> -->
-          </li>
-          <li>
-            <a href="#">알림마당</a>
-            <ul class="submenu">
-              <li><a href="#">공지사항</a></li>
-              <li><a href="#">정류소 신설.이전 및 <br> 정보 안내기 설치</a></li>
-              <li><a href="#">저상버스 대체 안내</a></li>
-              <li><a href="#">홈페이지 정보수정 요청</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </li>
-           <div class="ham">
-             <div class="ham_i">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-           </div>
-      </div>
-
-
-          <li>
-            <a href="#">BMS소개</a>
-
-             <button class="hamburger">
-              <span></span>
-              <span></span>
-              <span></span>
-
-            <ul class="submenu">
-              <li><a href="#">BMS 개요</a></li>
-              <li><a href="#">버스 운행 관리</a></li>
-              <li><a href="#">버스 운행 정보 수집</a></li>
-              <li><a href="#">버스 운행 정보 제공</a></li>
-              <li><a href="#">버스정보안내기 정보제공</a></li>
-              <li><a href="#">기대효과</a></li>
-              <li><a href="#">발전방향</a></li>
-             
-              
-              </button>
-            </ul>
-          </li>
+      <nav class="gnb">
+        <ul>
+          <li><a href="#">버스이용안내</a></li>
+          <li><a href="#">분실물센터</a></li>
+          <li><a href="#">알림마당</a></li>
+          <li><a href="#">BMS소개</a></li>
         </ul>
       </nav>
     </div>
-      <!-- <span class="lang">KOR⌄</span> -->
-    </div>
 
-    
+    <!--  메가메뉴 -->
+      <div class="mega">
+        <div class="mega_i">
 
+          <!-- 의류 -->
+           <div class="mega_group on">
+            <div class="panels">
+              <div class="panel on">
+                <div>
+                  <ul>
+                    <li><a href="#">버스 요금 안내</a></li>
+                    <li><a href="#">버스 운행 시간표</a></li>
+                    <li><a href="#">저상버스 운행 시간표</a></li>
+                    <li><a href="#">캐리어버스 운행 시간표</a></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <ul>
+                    <li><a href="#">버스 회사 정보 조회</a></li>
+                    <li><a href="#">버스정보안내기 위치</a></li>
+                    <li><a href="#">정류소 번호 조회</a></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <ul>
+                    <li><a href="#">버스 이용 통계</a></li>
+                    <li><a href="#">정류소별 이용 통계</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+           </div>
+          <!-- //의류 -->
+
+          <!-- 신발 -->
+           <div class="mega_group on">
+            <div class="panels">
+              <div class="panel on">
+                <div>
+                  <ul>
+                    <li><a href="#">분실물센터</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+           </div>
+          <!-- //신발 -->
+
+          <!-- 신발 -->
+           <div class="mega_group on">
+            <div class="panels">
+              <div class="panel on">
+                <div>
+                  <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">정류소 신설 이전 및 정보안내기 설치</a></li>
+                    <li><a href="#">저상버스 대체 안내</a></li>
+
+                  </ul>
+                </div>
+
+                <div>
+                  <ul>
+                    <li><a href="#">홈페이지 정보수정 요청</a></li>
+                    <li><a href="#">FAQ</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+           </div>
+          <!-- //신발 -->
+
+          <!-- 신발 -->
+           <div class="mega_group on">
+            <div class="panels">
+              <div class="panel on">
+                <div>
+                  <ul>
+                    <li><a href="#">BMS 개요</a></li>
+                    <li><a href="#">버스 운행 관리</a></li>
+                    <li><a href="#">버스 운행 정보 수집</a></li>
+                    <li><a href="#">버스 운행 정보 제공</a></li>
+                    <li><a href="#">버스정보안내기 정보제공</a></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <ul>
+                    <li><a href="#">기대효과</a></li>
+                    <li><a href="#">발전방향</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+           </div>
+          <!-- //신발 -->
+        </div>
+      </div>
+    <!--  //메가메뉴 -->
   </header>
   <!-- 헤더  -->
 
@@ -277,10 +322,10 @@
     <section class="wrap board">
     <div>
       <div class="board-nav">
-        <span class="active">공지사항</span>
+        <span class="active"><a href="">공지사항</a></span>
         <div class="navnav">
-        <span>정류소 및 안내기 설치</span>
-        <span>저상버스 대체안내</span>
+        <span><a href="">정류소 및 안내기 설치</a></span>
+        <span><a href="">저상버스 대체안내</a></span>
         </div>
       </div>
 
