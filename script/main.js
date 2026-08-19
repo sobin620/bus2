@@ -42,10 +42,16 @@ promoPanels.forEach((panel) => {
          $mega.find(".panel").eq(idx).addClass("on");
       }); 
 
-      var swiper = new Swiper('.hero-swiper', {
-    spaceBetween: 30,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
+    var swiper = new Swiper('.hero-swiper', {
+  spaceBetween: 30,
+  loop: true, 
+  autoplay: {
+    delay: 3000, 
+    disableOnInteraction: false, 
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
   });
