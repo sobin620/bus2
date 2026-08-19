@@ -743,9 +743,10 @@ header .brand{
   font-size: 16px;
   font-weight: 500;
   white-space: nowrap;
+  cursor: pointer;
 }
 
-.chips .active {
+.chips button:hover {
   background: var(--blue);
   color: #fff;
 }
