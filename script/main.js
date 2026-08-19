@@ -13,6 +13,7 @@ promoPanels.forEach((panel) => {
 });
 
 
+
       $(".gnb").on('mouseenter', function(){
          $(".mega").stop().slideDown(300);
       });
@@ -40,3 +41,11 @@ promoPanels.forEach((panel) => {
          $mega.find(".panel").removeClass("on");
          $mega.find(".panel").eq(idx).addClass("on");
       }); 
+
+      var swiper = new Swiper('.hero-swiper', {
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
