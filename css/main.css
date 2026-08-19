@@ -465,31 +465,79 @@ header .brand{
 }
 
 /* 슬라이드 공통 스타일 */
+
 .hero-slide {
+  position: relative;
+  width: 100%;
+  min-height: 580px;
   color: #fff;
-  background-position: center right; /* 이미지가 오른쪽에 잘 맞물리도록 설정 */
-  background-size: cover;
-  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
 }
 
-/* 1번 슬라이드: 왼쪽 파스텔 그라데이션 -> 오른쪽 원본 이미지 */
+
+.hero-slide::before {
+  content: "";
+  position: absolute;
+  inset: -30px;
+  background-image: inherit;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(40px) brightness(0.9);
+  z-index: 0;
+}
+
+
+.hero-slide .wrap {
+  position: relative;
+  z-index: 1;
+  width: 50%;                
+  max-width: 800px;           
+  height: 580px;
+  margin-right: 10%;          
+  
+
+  background-image: inherit;
+  background-position: center;
+  background-size: cover;
+  
+  display: flex;
+  align-items: center;
+}
+
+
+.hero-slide .hero-text {
+  position: absolute;
+  right: 100%;        
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: max-content;
+  max-width: 450px;          
+  margin-right: 180px;        
+  word-break: keep-all;       
+}
+
+
 .hero-slide--1 {
   background-image: 
-    linear-gradient(90deg, #258fff 0%, #bbb9b9 45%, rgba(237, 213, 147, 0) 75%),
     url("../image/money.jfif");
 }
 
 /* 2번 슬라이드 */
 .hero-slide--2 {
   background-image: 
-    linear-gradient(90deg, #d8a8b8 0%, #edd593 45%, rgba(237, 213, 147, 0) 75%),
+
     url("../image/mainbus.jpg");
 }
 
 /* 3번 슬라이드 */
 .hero-slide--3 {
   background-image: 
-    linear-gradient(90deg, #d8a8b8 0%, #edd593 45%, rgba(237, 213, 147, 0) 75%),
+
     url("../image/suseong.jpg");
 }
 
@@ -510,8 +558,8 @@ header .brand{
   font-size: 30px;
   font-weight: 800;
   line-height: 1.3;
-  /* 만약 글자가 배경에 묻히면 아래 주석을 풀어 그림자를 넣어주세요 */
-  /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); */
+
+
   white-space: nowrap;
 }
 
@@ -531,23 +579,8 @@ header .brand{
   background: rgba(255, 255, 255, 0.4);
 }
 
-/* Swiper 페이지네이션 (하단 점) */
-.hero .swiper-pagination {
-  bottom: 20px;
-}
 
-.hero .swiper-pagination-bullet {
-  width: 9px;
-  height: 9px;
-  background: #fff;
-  opacity: 0.55;
-}
 
-.hero .swiper-pagination-bullet-active {
-  width: 24px;
-  border-radius: 10px;
-  opacity: 1;
-}
 
 .quick {
   max-width: 1080px;
@@ -1088,7 +1121,7 @@ footer {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, .42);
-  transition:.3s ease;
+  /* transition:.3s ease; */
 }
 
 .promo-panel.is-active::after {
@@ -1102,7 +1135,7 @@ footer {
 .promo-copy {
   position: relative;
   overflow: hidden;
-  background: #60aaf7; /* 대표 카드 이미지가 있으면 background-image로 교체 */
+  background: #60aaf7;
 }
 
 .promo-label,
