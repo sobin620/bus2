@@ -12,7 +12,7 @@ promoPanels.forEach((panel) => {
   });
 });
 
-$(function(){
+
       $(".gnb").on('mouseenter', function(){
          $(".mega").stop().slideDown(300);
       });
@@ -40,5 +40,3 @@ $(function(){
          $mega.find(".panel").removeClass("on");
          $mega.find(".panel").eq(idx).addClass("on");
       }); 
-
-   }); 
