@@ -133,7 +133,7 @@ header .header_i {
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* 로고와 메뉴 양끝 정렬 */
+  justify-content: space-between; 
 }
 
 header .gnb ul {
@@ -151,22 +151,22 @@ header .gnb ul li.on a {
   color: #258fff;
 }
 
-/* ⬇️ 메가메뉴 수정 부분 ⬇️ */
+
 .mega {
   display: none;
   position: absolute;
-  top: 117px; /* header 높이(117px) 바로 밑으로 위치 */
+  top: 117px; 
   left: 0;
   width: 100%;
   background-color: #fff;
-  z-index: 999; /* 메인 콘텐츠보다 위에 뜨도록 설정 */
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05); /* 약간의 그림자 효과 */
+  z-index: 999;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05); 
 }
 
 .mega .mega_i {
-  max-width: 1400px; /* header_i와 동일한 너비로 맞춰 위치 동일화 */
+  max-width: 1400px;
   margin: auto;
-  padding-left: 300px; /* 로고 넓이만큼 왼쪽 여백을 주어 GNB 메뉴 위치와 세로 정렬 맞춤 */
+  padding-left: 300px; 
 }
 
 .mega .mega_i .mega_group {
@@ -179,7 +179,7 @@ header .gnb ul li.on a {
 
 .mega .mega_i .mega_group .panels {
   flex-grow: 1;
-  padding: 30px 0 50px 0; /* 패딩 간격 조정 */
+  padding: 30px 0 50px 0; 
 }
 
 .mega .mega_i .mega_group .panels .panel {
@@ -188,7 +188,7 @@ header .gnb ul li.on a {
 
 .mega .mega_i .mega_group .panels .panel.on {
   display: flex;
-  gap: 100px; /* 메뉴 컬럼 사이 간격 */
+  gap: 100px; 
 }
 
 .mega .mega_i .mega_group .panel li a {
@@ -200,13 +200,13 @@ header .gnb ul li.on a {
 }
 
 .mega .mega_i .mega_group .panel li a:hover {
-  color: #258fff; /* 마우스 호버 시 파란색 */
+  color: #258fff; 
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 18px; /* 로고와 글자 사이 간격 */
+  gap: 18px; 
 }
 
 
@@ -220,7 +220,7 @@ header .gnb ul li.on a {
 .brand .mark img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* 비율 깨짐 방지 */
+  object-fit: contain; 
 }
 
 
