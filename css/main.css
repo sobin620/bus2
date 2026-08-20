@@ -543,8 +543,7 @@ header .brand{
   z-index: 2;
   width: max-content;
   max-width: 450px;          
-  margin-right: 180px;        
-  word-break: keep-all;       
+  margin-right: 180px;    
 }
 
 
@@ -652,23 +651,23 @@ header .brand{
 
 
 .wrap.quick a i.icon-fare {
-  background-image: url('../image/L1.png');
+  background-image: url('../image/b1.png');
 }
 
 .wrap.quick a i.icon-use {
-  background-image: url('../image/L2.png');
+  background-image: url('../image/b2.png');
 }
 
 .wrap.quick a i.icon-route {
-  background-image: url('../image/L3.png');
+  background-image: url('../image/b5.png');
 }
 
 .wrap.quick a i.icon-stop {
-  background-image: url('../image/L4.png');
+  background-image: url('../image/b3.png');
 }
 
 .wrap.quick a i.icon-lost {
-  background-image: url('./images/icon_lost.png');
+  background-image: url('../images/b4.png');
 }
 
 .promo-copy {
